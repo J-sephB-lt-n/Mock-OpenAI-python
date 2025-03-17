@@ -2,7 +2,7 @@
 
 To make unit testing easier, I made a simple mock of the [OpenAI python library](https://github.com/openai/openai-python) chat completions API.
 
-I'll keep extend it as I find functionality that I need.
+I'll keep adding functionality as I require it.
 
 Example usage:
 
