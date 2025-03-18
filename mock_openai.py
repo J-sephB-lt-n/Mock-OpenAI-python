@@ -11,6 +11,7 @@ from typing import Optional
 
 import openai
 
+
 class Completions:
     class Mock:
         def __init__(self) -> None:
@@ -75,12 +76,16 @@ class Completions:
             created=int(time.time()),
             model=model,
             object="chat.completion",
+            usage=openai.types.completion_usage.CompletionUsage(
+                completion_tokens=60, prompt_tokens=9, total_tokens=69
+            ),
         )
 
     def create(
         self,
         model: str,
         messages: list[dict],
+        **kwargs,
     ) -> openai.types.chat.ChatCompletion:
         match self.mock._output_mode:
             case "random_chars":
